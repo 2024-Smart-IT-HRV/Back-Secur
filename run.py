@@ -1,15 +1,13 @@
+from flask_cors import CORS
 from app import create_app
 
 app = create_app()
 
-@app.route("/")
-def home():
-    return "Welcome to the Flask API!"  # 기본 경로 응답
+# CORS 설정: 모든 출처와 모든 HTTP 메서드 허용
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 if __name__ == "__main__":
     app.run(debug=True)
 
-@app.route("/routes", methods=["GET"])
-def list_routes():
-    from flask import jsonify
-    return jsonify([str(rule) for rule in app.url_map.iter_rules()])
+if __name__ == "__main__":
+    app.run(debug=True)  # Debug 모드 활성화

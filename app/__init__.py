@@ -46,4 +46,7 @@ def create_app():
     def index():
         return {"message": "Welcome to the Flask API!"}, 200
 
+
     return app
+
+ 
