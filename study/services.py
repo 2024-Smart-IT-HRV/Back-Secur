@@ -1,4 +1,6 @@
 from datetime import datetime
+from app.models import StudyLog  # 수정된 경로
+
 
 def calculate_study_time(start_time, end_time):
     start = datetime.fromisoformat(start_time)
